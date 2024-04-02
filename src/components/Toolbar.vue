@@ -1,7 +1,7 @@
 <template>
   <div class="border-neutral-300 flex justify-between items-center py-1 text-sm">
     <div class="flex text-center" v-if="!searchQuery.length">
-        <div class="mx-1.5"
+        <div class="newfolder mx-1.5"
              :aria-label="t('New Folder')" data-microtip-position="bottom-right" role="tooltip"
              v-if="app.features.includes(FEATURES.NEW_FOLDER)"
              @click="app.emitter.emit('vf-modal-show', {type:'new-folder', items: selectedItems})">
@@ -11,7 +11,7 @@
           </svg>
         </div>
 
-        <div class="mx-1.5"
+        <div class="newfile mx-1.5"
              :aria-label="t('New File')" data-microtip-position="bottom" role="tooltip"
              v-if="app.features.includes(FEATURES.NEW_FILE)"
              @click="app.emitter.emit('vf-modal-show', {type:'new-file', items: selectedItems})">
@@ -21,7 +21,7 @@
           </svg>
         </div>
 
-        <div class="mx-1.5"
+        <div class="rename mx-1.5"
              :aria-label="t('Rename')" data-microtip-position="bottom" role="tooltip"
              v-if="app.features.includes(FEATURES.RENAME)"
              @click="(selectedItems.length != 1) || app.emitter.emit('vf-modal-show', {type:'rename', items: selectedItems})">
@@ -32,7 +32,7 @@
           </svg>
         </div>
 
-        <div class="mx-1.5"
+        <div class="delete mx-1.5"
              :aria-label="t('Delete')" data-microtip-position="bottom" role="tooltip"
              v-if="app.features.includes(FEATURES.DELETE)"
              @click="(!selectedItems.length) || app.emitter.emit('vf-modal-show', {type:'delete', items: selectedItems})">
@@ -43,7 +43,7 @@
             </svg>
         </div>
 
-        <div class="mx-1.5"
+        <div class="upload mx-1.5"
              :aria-label="t('Upload')" data-microtip-position="bottom" role="tooltip"
              v-if="app.features.includes(FEATURES.UPLOAD)"
              @click="app.emitter.emit('vf-modal-show', {type:'upload', items: selectedItems})">
@@ -52,7 +52,7 @@
           </svg>
         </div>
 
-        <div class="mx-1.5" v-if="app.features.includes(FEATURES.UNARCHIVE) && selectedItems.length == 1 && selectedItems[0].mime_type == 'application/zip'"
+        <div class="unarchive mx-1.5" v-if="app.features.includes(FEATURES.UNARCHIVE) && selectedItems.length == 1 && selectedItems[0].mime_type == 'application/zip'"
              :aria-label="t('Unarchive')" data-microtip-position="bottom" role="tooltip"
               @click="(!selectedItems.length) || app.emitter.emit('vf-modal-show', {type:'unarchive', items: selectedItems})">
           <svg xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5m6 4.125l2.25 2.25m0 0l2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
           </svg>
         </div>
-        <div class="mx-1.5" v-if="app.features.includes(FEATURES.ARCHIVE)"
+        <div class="archive mx-1.5" v-if="app.features.includes(FEATURES.ARCHIVE)"
              :aria-label="t('Archive')" data-microtip-position="bottom" role="tooltip"
               @click="(!selectedItems.length) || app.emitter.emit('vf-modal-show', {type:'archive', items: selectedItems})">
           <svg xmlns="http://www.w3.org/2000/svg"
