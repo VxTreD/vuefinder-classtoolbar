@@ -23,7 +23,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "github:VxTreD/vuefinder-classtoolbar"
+    "url": "git+https://github.com/n1crack/vuefinder.git"
   },
   "author": {
     "name": "Yusuf Özdemir",
