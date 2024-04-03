@@ -51,6 +51,13 @@ app.emitter.on('vf-context-selected', (items) => {
 })
 
 const menuItems = {
+  newfolder: {
+    key: FEATURES.NEW_FOLDER,
+    title: () => t('New Folder'),
+    action: () => {
+      app.emitter.emit('vf-modal-show', {type:'new-folder'});
+    },
+  },
   delete: {
     key: FEATURES.DELETE,
     title: () => t('Delete'),
@@ -141,7 +148,7 @@ app.emitter.on('vf-contextmenu-show', ({event, area, items,  target = null}) => 
     }
   } else if (!target && !searchQuery.value) {
     context.items.push(menuItems.refresh);
-    context.items.push(menuItems.newfolder);
+    // context.items.push(menuItems.newfolder);
     app.emitter.emit('vf-context-selected', []);
     // console.log('no files selected');
   } else if (items.length > 1 && items.some(el => el.path === target.path)) {
