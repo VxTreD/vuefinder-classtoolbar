@@ -3403,7 +3403,7 @@ const ve = /* @__PURE__ */ Kn(Jn, [["render", Qn]]), Zn = { class: "sm:flex sm:i
       p.component(r.name, r);
     e.i18n = e.i18n ?? {};
     let [s] = Object.keys(e.i18n);
-    e.locale = e.locale ?? s ?? "en", p.provide("VueFinderOptions", e);
+    e.locale = e.locale ?? s ?? "pt", p.provide("VueFinderOptions", e);
   }
 };
 export {

@@ -51,13 +51,6 @@ app.emitter.on('vf-context-selected', (items) => {
 })
 
 const menuItems = {
-  newfolder: {
-    key: FEATURES.NEW_FOLDER,
-    title: () => t('New Folder'),
-    action: () => {
-      app.emitter.emit('vf-modal-show', {type:'new-folder'});
-    },
-  },
   delete: {
     key: FEATURES.DELETE,
     title: () => t('Delete'),
